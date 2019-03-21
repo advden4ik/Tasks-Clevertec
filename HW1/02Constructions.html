@@ -1,0 +1,64 @@
+<script>
+	// Task 1
+	let A, B;
+	A = +prompt('Введите A');
+	B = +prompt('Введите B > A');
+
+	for (let i = A; i <= B; i++) {
+		document.write('<p>' + i);
+	}
+	for (let i = A; i <= B; i++) {
+		if (i % 2 == 1) {
+			document.write('<p>' + i);
+		}
+	}
+
+	// Task 2
+	let n = +prompt('Введите число');
+	let result = 1, i = 1;
+	do {
+		result *= i;
+		i++;
+	} while(i <= n);
+	document.write('<p>' + n + '! = ' + result);
+
+	// Task 3
+	document.write('<p>Прямоугольник<br>');
+	for (let i = 0; i < 5; i++) {
+		for (let j = 0; j < 5; j++) {
+			if (i == 0 || i == 4 || j == 0 || j == 4) {
+				document.write('*');
+			}
+			else {
+				document.write('&nbsp;&nbsp;');
+			}
+		}
+		document.write('<br>');
+	}
+
+	document.write('<p>Rectangle<br>');
+	for (let i = 0; i < 5; i++) {
+		for (let j = 0; j < 5; j++) {
+			if (i == j || i == 4 || j == 0) {
+				document.write('*');
+			}
+			else {
+				document.write('&nbsp;&nbsp;');
+			}
+		}
+		document.write('<br>');
+	}
+
+	document.write('<p>Equilateral triangle<br>');
+	for (let i = 0; i < 4; i++) {
+		for (let j = 0; j < 7; j++) {
+			if (j == 3 + i || j == 3 - i || i == 3) {
+				document.write('*');
+			}
+			else {
+				document.write('&nbsp;&nbsp;');
+			}
+		}
+		document.write('<br>');
+	}
+</script>

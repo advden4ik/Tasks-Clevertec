@@ -1,0 +1,43 @@
+<script>
+	// Task 1
+	let array = new Array(20);
+	for (let i = 0; i < array.length; i++) {
+		array[i] = i * 5;
+	}
+	for (let i = 0; i < array.length; i++) {
+		console.log(array[i]);
+	}
+
+	// Task 2
+	alert(compareArraysLexicographically(['a','b','z',''], ['a','c','z']));
+
+	function compareArraysLexicographically(array1, array2) {
+		let result;
+		let minLength = Math.min(array1.length, array2.length);
+
+		for (let i = 0; i < minLength; i++) {
+			if (array1[i] < array2[i]) {
+				result = 'Первый массив меньше второго лексикографически!';
+				break;
+			}
+			else if (array1[i] > array2[i]) {
+				result = 'Второй массив меньше первого лексикографически!';
+				break;
+			}
+		}
+
+		if (result == undefined) {
+			if (array1.length < array2.length) {
+				result = 'Первый массив меньше второго лексикографически!';
+			}
+			else if (array1.length > array2.length) {
+				result = 'Второй массив меньше первого лексикографически!';
+			}
+			else {
+				result = 'Оба массива равны!';
+			}
+		}
+		
+		return result;
+	}
+	</script>

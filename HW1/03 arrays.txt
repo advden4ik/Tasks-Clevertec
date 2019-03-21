@@ -1,0 +1,5 @@
+Task 1
+Create an array of N elements, populate it with arbitrary integer values. Output the largest value of the array, the smallest value of the array, the total sum of the elements, the arithmetic mean of all elements, output all odd values.
+ 
+Tasks 2 
+Create a two-dimensional array of 5x5 elements and populate it with arbitrary integer values. On the main diagonal, replace all numbers with the sign (-) by 10, and the numbers with the sign (+) by the number 20.

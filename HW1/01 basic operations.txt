@@ -1,0 +1,21 @@
+﻿Task 1 
+ 
+Create 3 variables x = 6, y = 15, and z = 4:
+Perform and display the results of the following operations for these variables:
+· x += y - x++ * z ; 
+· z = -- x - y * 5 ; 
+· y /= x + 5 % z ;  
+· z = x++ + y * 5 ; 
+· x = y - x++ * z ; 
+Note: for each operation please use default values: x = 6, y = 15, and z = 4
+ 
+Task 2 
+ 
+Calculate the arithmetic average value of the three integer values and display it on the screen.
+ 
+Task 3 
+ 
+Write a program for calculating the volume - V and the surface area - S of the cylinder.
+The volume V of the cylinder of radius-r and height-h, is calculated by the formula: V = πr 2 h.
+The area S of the surface of the cylinder is calculated by the formula: S = 2π rh + 2π r 2 = 2π r (r + h). 
+The results of calculations should be displayed on the screen.

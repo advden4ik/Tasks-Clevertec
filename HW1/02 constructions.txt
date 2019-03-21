@@ -1,0 +1,15 @@
+task 1
+
+Given two numbers A and B, where (A < B).
+Display all integer numbers in interval from A to B (including borders).
+Display all odd integer values located in the numerical interval from A to B (including borders).
+ 
+Task 2 
+Write a program that will calculate the factorial of N, using the do-while loop.
+ 
+Task 3 
+Using the loops, draw in the browser with spaces (& nbsp) and asterisks (*):
+· Rectangle
+· Right triangle
+· Equilateral triangle
+· Rhombus.

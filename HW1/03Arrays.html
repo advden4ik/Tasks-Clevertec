@@ -1,0 +1,65 @@
+<script>
+	let n = +prompt('Введи кол-во элементов массива');
+	let array = new Array(n);
+	for (let i = 0; i < n; i++) {
+		array[i] = randomNumberInRange(-100, 100);
+	}
+
+	document.write('Array: ');
+	document.write(array.join(' '));
+
+	alert(maxInArray(array));
+	alert(minInArray(array));
+	alert(sumElementsOfArray(array));
+	alert(averageOfAllElements(array));
+	alert(printOddValuesOfArray(array));
+
+	function randomNumberInRange(min, max) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+	function maxInArray(array) {
+		// let max = Number.NEGATIVE_INFINITY;
+		let max = array[0];
+		for (let i = 1; i < array.length; i++) {
+			if (max < array[i]) {
+				max = array[i];
+			}
+		}
+		return max;
+	}
+
+	function minInArray(array) {
+		// let min = Number.POSITIVE_INFINITY;
+		let min = array[0];
+		for (let i = 1; i < array.length; i++) {
+			if (min > array[i]) {
+				min = array[i];
+			}
+		}
+		return min;
+	}
+
+	function sumElementsOfArray(array) {
+		let sum = 0;
+		for (let i = 0; i < array.length; i++) {
+			sum += array[i];
+		}
+		return sum;
+	}
+
+	function averageOfAllElements(array) {
+		let result = sumElementsOfArray(array);
+		return +(result /= array.length).toFixed(2);
+	}
+
+	function printOddValuesOfArray(array) {
+		document.write('<p>Нечётные элементы массива:<br>');
+		for (let i = 0; i < array.length; i++) {
+			if (Math.abs(array[i]) % 2 == 1) {
+				document.write('<p>' + array[i]);
+			}
+		}
+		return 'Нечётные элементы массива';
+	}
+</script>

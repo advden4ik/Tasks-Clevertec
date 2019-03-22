@@ -9,7 +9,7 @@
 	}
 
 	// Task 2
-	alert(compareArraysLexicographically(['a','b','z',''], ['a','c','z']));
+	alert(compareArraysLexicographically(['a','b','z','h'], ['a','c','z']));
 
 	function compareArraysLexicographically(array1, array2) {
 		let result;
@@ -39,5 +39,104 @@
 		}
 		
 		return result;
+	}
+
+	// Task 3
+	alert(maxSequenceOfEqualElementsInArray([2, 1, 1, 2, 3, 3, 2, 2, 2, 1]));
+
+	function maxSequenceOfEqualElementsInArray(array) {
+		let arr = [], index = 0, value, count = 1, maxCount = 1, temp = array[0];
+
+		for (let i = 1; i < array.length; i++) {
+			if (array[i] == temp) {
+				count++;
+			}
+			else {
+				if (maxCount < count) {
+					maxCount = count;
+					index = i - maxCount;
+				}
+				temp = array[i];
+				count = 1;
+			}
+		}
+
+		if (maxCount < count) {
+			maxCount = count;
+			index = array.length - maxCount;
+		}
+
+		value = array[index];
+		for (let i = 0; i < maxCount; i++) {
+			arr.push(value);
+		}
+
+		return arr;
+	}
+
+	// Task 4
+	alert(maxIncreasingSequenceInArray([3, 2, 3, 4, 2, 2, 4]));
+
+	function maxIncreasingSequenceInArray(array) {
+		let arr = [], difference = 0, count = 1, maxCount = 1, temp = array[0], q, d, index = 0, value, sequence = 0;
+
+		for (let i = 1; i < array.length; i++) {
+			if (array[i] > temp && count == 1) {
+				count++;
+				d = array[i] - temp;
+				q = array[i] / temp;
+			}
+			else if (array[i] > temp && count > 1 && (array[i] - temp == d || array[i] / temp == q)) {
+				count++;
+				if (array[i] - temp == d) {
+					sequence = 0;
+					difference = d;
+				}
+				if (array[i] / temp == q) {
+					sequence = 1;
+					difference = q;
+				}
+			}
+			else {
+				count = 1;
+			}
+
+			temp = array[i];
+			if (maxCount < count) {
+				maxCount = count;
+				index = i - maxCount + 1;
+			}
+		}
+
+		value = array[index];
+		for (let i = 0; i < maxCount; i++) {
+			arr.push(value);
+			if (sequence == 0) {
+				value += difference;
+			}
+			else {
+				value *= difference;
+			}
+		}
+
+		return arr;
+	}
+
+	// Task 5
+	alert(selectionSort([3, 2, 5, 7, 1]));
+
+	function selectionSort(array) {
+		for (let i = 0; i < array.length - 1; i++) {
+			let index = i;
+			for (let j = i + 1; j < array.length; j++) {
+				if (array[i] > array[j]) {
+					index = j;
+				}
+			}
+			let temp = array[i];
+			array[i] = array[index];
+			array[index] = temp;
+		}
+		return array;
 	}
 	</script>

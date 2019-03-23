@@ -137,6 +137,64 @@
 			array[i] = array[index];
 			array[index] = temp;
 		}
+
 		return array;
+	}
+
+	// Task 6
+	 alert(mostFrequentNumberInArray([4, 1, 1, 4, 2, 3, 4, 1, 1, 1, 4, 1, 2, 4, 9, 3]));
+
+	function mostFrequentNumberInArray(array) {
+		let arr = [], result, max;
+
+		for (let i = 0; i < array.length; i++) {
+			if (isNaN(arr[array[i]])) {
+				arr[array[i]] = 0;
+			}
+			arr[array[i]]++; 
+		}
+
+		for (let i = 0; i < arr.length; i++) {
+			if (arr[i] === undefined) {
+				arr[i] = 0;
+			}
+		}
+
+		max = Math.max.apply(null, arr);
+		for (let i = 0; i < arr.length; i++) {
+			if (arr[i] === max) {
+				result = i;
+			}
+		}
+
+		result += ' (' + max + ' times)';
+		return result;
+	}
+
+	// Task 7
+	alert('index = ' + binarySearch(3, [1,2,3,4,5,6,7,8]));
+
+	function binarySearch(value, array) {
+		let first = 0;
+		let last = array.length - 1;
+		let position = -1;
+		let found = false;
+		let middle;
+
+		while (found === false && first <= last) {
+			middle = Math.floor((first + last) / 2);
+
+			if (array[middle] == value) {
+				found = true;
+				position = middle;
+			}
+			else if (array[middle] > value) {
+				last = middle - 1;
+			}
+			else {
+				first = middle + 1;
+			}
+		}
+		return position;
 	}
 	</script>

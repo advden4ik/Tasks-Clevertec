@@ -62,5 +62,27 @@
 	}
 
 	// Task 3
-	
+	alert(getWordsInSentence('djavascript javawiuq Java1', 'java'));
+
+	function getWordsInSentence(sentence, word, caseSensitivity = true) {
+		let arrayOfIndex = [], flags;
+		if (!caseSensitivity) {
+			flags = 'gi';
+		}
+		else {
+			flags = 'g';
+		}
+
+		let pattern = new RegExp(word, flags);
+		let res, i = 0;
+		while ((res = pattern.exec(sentence)) != null) {
+			arrayOfIndex[i++] = res.index;
+		}
+		return arrayOfIndex;
+	}
+
+	// Task 4
+	function getCountOfDivs(argument) {
+		// body... 
+	}
 </script>

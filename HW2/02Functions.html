@@ -89,6 +89,56 @@
 			return document.querySelectorAll('div').length;
 		}
 	}
+
+	// Task 5
+	alert(countNumberInArray([3, 5, 7, 3, 5, -2, 0, 5], 5));
+
+	function countNumberInArray(array, value) {
+		let count = 0;
+
+		for (let i = 0; i < array.length; i++) {
+			if (array[i] === value) {
+				count++;
+			}
+		}
+
+		return count;
+	}
+
+	// Task 6
+	alert(biggerThanNeighbors([1, 2, 3], 2));
+
+	function biggerThanNeighbors(array, position) {
+		if (array.length < 3 || position >= array.length || position < 0 || position === undefined) {
+			return 'Переданные данные неверные!';
+		}
+
+		let left = position - 1,
+				right = position + 1;
+
+		if (position === 0) {
+			left = array.length - 1;
+		}
+
+		if (position === array.length - 1) {
+			right = 0;
+		}
+
+		return array[position] > array[left] && array[position] > array[right];
+	}
+
+	// Task 7
+	alert(getPosFirstElemBiggerThanNeighbors([1, 2, 3, 5, 1, 3]));
+
+	function getPosFirstElemBiggerThanNeighbors(array) {
+		for (let i = 0; i < array.length; i++) {
+			if (biggerThanNeighbors(array, i)) {
+				return i;
+			}
+		}
+
+		return -1;
+	}
 </script>
 
 <div>asfas</div>
